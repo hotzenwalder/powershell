@@ -1,4 +1,4 @@
-#Author: Marcel Moerings/FNV
+#Author: Marcel Moerings
 
 #Duplicate Roles from a source user to a target user for all resources in the current subscription
 #Needs $source account in UPN format. Needs $target account to duplicate rights
@@ -23,14 +23,14 @@ $targetname = Get-AzureADUser -objectid $target | Select-Object ObjectID,Display
 #Show the output
 $Resources = @()
 $rights = Get-AzRoleAssignment -ObjectID $sourcename.ObjectId | Select-Object RoleDefinitionName, Scope
-Write-Host "Rechten toevoegen voor"$targetname.Displayname -ForegroundColor Green
+Write-Host "Add rights for"$targetname.Displayname -ForegroundColor Green
 ForEach($item in $rights){        
     $rg = $item.scope.split('/')[-1]            
     Try{
         New-AzRoleAssignment -SignInName $target -RoleDefinitionName $item.RoleDefinitionName -ResourceGroupName $rg
-        Write-Host $item.RoleDefinitionName "rol toegevoegd aan resource group" $rg 
+        Write-Host $item.RoleDefinitionName "added rol to resource group" $rg 
     }
     Catch {
-        Write-Host "Kon geen"$item.RoleDefinitionName "rol toegevoegen aan resource group" $rg -ForegroundColor Yellow
+        Write-Host "Could not add"$item.RoleDefinitionName "as a role to resource group" $rg -ForegroundColor Yellow
     }
 }
