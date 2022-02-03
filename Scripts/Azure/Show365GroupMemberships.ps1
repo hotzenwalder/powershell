@@ -1,6 +1,6 @@
 #Author: Marcel Moerings/FNV
 
-#Show which 365 groups a specific account is a member of in the current Azure Tenant
+#Show which 365 groups a specific account is member of in the current Azure Tenant
 #Needs $source account in UPN format
 #Needs at least read rights in Azure AD
 
