@@ -6,8 +6,8 @@
 #Current script only looks for rights in subscription where you have rights assigned
 
 #Connect to Azure Tenant
--Tenant "<Azure Tenant ID>"
-Connect-AzAccount
+Connect-AzureAD -TenantId "<Azure Tenant ID>"
+Connect-AzAccount -TenantId "<Azure Tenant ID>"
 
 Clear-Host
 
