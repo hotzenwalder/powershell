@@ -21,7 +21,6 @@ $targetname = Get-AzureADUser -objectid $target | Select-Object ObjectID,Display
 
 #Enumerate rights for the source user in the current subscription and duplicate those rights to the target user
 #Show the output
-$Resources = @()
 $rights = Get-AzRoleAssignment -ObjectID $sourcename.ObjectId | Select-Object RoleDefinitionName, Scope
 Write-Host "Add rights for"$targetname.Displayname -ForegroundColor Green
 ForEach($item in $rights){        
