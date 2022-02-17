@@ -6,7 +6,7 @@
 #Current script only looks for rights in the active subscription
 
 #Connect to Azure Tenant
-Connect-AzAccount -Tenant "<Azure Tenant ID>"
+Connect-AzAccount -TenantId "<Azure Tenant ID>"
 
 #Set Azure Context to a specific subscription 
 Set-AzContext -Subscription "<Azure Subscription>"
