@@ -9,6 +9,7 @@
 Connect-AzureAD -TenantId "<Azure Tenant ID>"
 Connect-AzAccount -TenantId "<Azure Tenant ID>"
 
+#Clear Screen
 Clear-Host
 
 #Set source for inventory of rights
