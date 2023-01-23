@@ -1,6 +1,7 @@
 Write-Host -ForegroundColor Cyan "Starten OSDCloud FNV..."
 Write-Host -ForegroundColor Cyan "Meer informatie: Marcel Moerings"
-Start-Sleep -Seconds 5
+Write-Host ""
+Start-Sleep -Seconds 3
 
 #Make sure I have the latest OSD Content
 #Write-Host  -ForegroundColor Cyan "Updaten OSD PowerShell Module"
