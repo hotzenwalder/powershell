@@ -10,6 +10,7 @@ Start-Sleep -Seconds 3
 Write-Host  -ForegroundColor Cyan "Importeren OSD PowerShell Module"
 Import-Module OSD -Force
 
+Write-Host ""
 Write-Host -ForegroundColor Cyan "Dit script wist de harde schijf en installeert een schone Windows 10 22H2"
 Write-Host -ForegroundColor Cyan "Alle gegevens gaan verloren!"
 Write-Host ""
