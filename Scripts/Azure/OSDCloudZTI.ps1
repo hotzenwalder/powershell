@@ -5,7 +5,7 @@ Start-Sleep -Seconds 3
 
 #Make sure I have the latest OSD Content
 #Write-Host  -ForegroundColor Cyan "Updaten OSD PowerShell Module"
-Install-Module OSD -Force
+#Install-Module OSD -Force
 
 Write-Host  -ForegroundColor Cyan "Importeren OSD PowerShell Module"
 Import-Module OSD -Force
@@ -21,7 +21,7 @@ While($Selection -ne "J" ){
    $Selection = read-host "Doorgaan? (J/N)"
     Switch ($Selection) 
         { 
-            Y {Write-host -ForegroundColor Red "Doorgaan met wissen"} 
+            J {Write-host -ForegroundColor Red "Doorgaan met wissen"} 
             N {Write-Host -ForegroundColor Red "Stoppen met uitvoer";Return} 
             default {Write-Host "Alleen J/N is een geldig antwoord"}
         } 
