@@ -5,7 +5,7 @@ Start-Sleep -Seconds 3
 
 #Make sure I have the latest OSD Content
 #Write-Host  -ForegroundColor Cyan "Updaten OSD PowerShell Module"
-#Install-Module OSD -Force
+Install-Module OSD -Force
 
 Write-Host  -ForegroundColor Cyan "Importeren OSD PowerShell Module"
 Import-Module OSD -Force
@@ -29,7 +29,7 @@ While($Selection -ne "J" ){
 
 #Start OSDCloud ZTI the RIGHT way
 Write-Host  -ForegroundColor Cyan "Starten OSDCloud met FNV instellingen"
-Start-OSDCloud -OSVersion 'Windows 10' -OSBuild 22H2 -OSEdition Enterprise -OSLanguage nl-nl -ZTI
+Start-OSDCloud -OSVersion 'Windows 10' -OSBuild 22H2 -OSEdition Pro -OSLanguage nl-nl -ZTI
 
 #Restart from WinPE
 Write-Host  -ForegroundColor Cyan "Herstarten in 20 seconden..."
