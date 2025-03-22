@@ -129,7 +129,7 @@ if (Test-HPIASupport){
     Write-SectionHeader -Message "Detected HP Device, Enabling HPIA, HP BIOS and HP TPM Updates"
     #$Global:MyOSDCloud.DevMode = [bool]$True
     $Global:MyOSDCloud.HPTPMUpdate = [bool]$false
-    $Global:MyOSDCloud.HPIAALL = [bool]$false}
+    $Global:MyOSDCloud.HPIAALL = [bool]$false
     #if ($Product -ne '83B2' -and $Model -notmatch "zbook"){$Global:MyOSDCloud.HPIAALL = [bool]$true} #I've had issues with this device and HPIA
     #{$Global:MyOSDCloud.HPIAALL = [bool]$true}
     $Global:MyOSDCloud.HPBIOSUpdate = [bool]$false
