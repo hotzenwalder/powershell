@@ -15,6 +15,7 @@ function Write-DarkGrayDate {
         Write-Host -ForegroundColor DarkGray "$((Get-Date).ToString('yyyy-MM-dd-HHmmss')) " -NoNewline
     }
 }
+
 function Write-DarkGrayHost {
     [CmdletBinding()]
     param (
@@ -24,11 +25,13 @@ function Write-DarkGrayHost {
     )
     Write-Host -ForegroundColor DarkGray $Message
 }
+
 function Write-DarkGrayLine {
     [CmdletBinding()]
     param ()
     Write-Host -ForegroundColor DarkGray '========================================================================='
 }
+
 function Write-SectionHeader {
     [CmdletBinding()]
     param (
@@ -40,6 +43,7 @@ function Write-SectionHeader {
     Write-DarkGrayDate
     Write-Host -ForegroundColor Cyan $Message
 }
+
 function Write-SectionSuccess {
     [CmdletBinding()]
     param (
@@ -50,6 +54,7 @@ function Write-SectionSuccess {
     Write-DarkGrayDate
     Write-Host -ForegroundColor Green $Message
 }
+
 #endregion
 
 $ScriptName = 'osdcloud.coloneldecker.com'
@@ -66,8 +71,6 @@ $ComputerProduct = (Get-MyComputerProduct)
 $ComputerManufacturer = (Get-MyComputerManufacturer -Brief)
 #>
 
-
-
 #Variables to define the Windows OS / Edition etc to be applied during OSDCloud
 $Product = (Get-MyComputerProduct)
 $Model = (Get-MyComputerModel)
@@ -78,7 +81,6 @@ $OSName = 'Windows 11 24H2 x64'
 $OSEdition = 'Pro'
 $OSActivation = 'Retail'
 $OSLanguage = 'nl-nl'
-
 
 #Set OSDCloud Vars
 $Global:MyOSDCloud = [ordered]@{
@@ -108,6 +110,7 @@ $Global:MyOSDCloud = [ordered]@{
 #if ($DriverPack){
 #    $Global:MyOSDCloud.DriverPackName = $DriverPack.Name
 #}
+
 $Global:MyOSDCloud.DriverPackName = "None"
 
 <#If Drivers are expanded on the USB Drive, disable installing a Driver Pack
@@ -123,6 +126,7 @@ if (Test-DISMFromOSDCloudUSB -eq $true){
     }
 }
 #>
+
 #Enable HPIA | Update HP BIOS | Update HP TPM
  
 if (Test-HPIASupport){
@@ -138,7 +142,6 @@ if (Test-HPIASupport){
     #iex (irm https://raw.githubusercontent.com/gwblok/garytown/master/OSD/CloudOSD/Manage-HPBiosSettings.ps1)
     #Manage-HPBiosSettings -SetSettings
 }
-
 
 #write variables to console
 Write-SectionHeader "OSDCloud Variables"
