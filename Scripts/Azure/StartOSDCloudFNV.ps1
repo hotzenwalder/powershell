@@ -26,7 +26,7 @@ While($Selection -ne "J" ){
 
 #Start OSDCloud ZTI the RIGHT way
 Write-Host  -ForegroundColor Cyan "Starten OSDCloud met FNV instellingen"
-iex(irm osdcloud.coloneldecker.com)
+iex (irm osdcloud.coloneldecker.com)
 
 #Restart from WinPE
 Write-Host  -ForegroundColor Cyan "Herstarten in 20 seconden..."
