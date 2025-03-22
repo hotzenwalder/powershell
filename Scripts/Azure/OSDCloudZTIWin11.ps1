@@ -1,5 +1,3 @@
-﻿#to Run, boot OSDCloudUSB, at the PS Prompt: iex (irm win11.garytown.com)
-
 #region Initialization
 function Write-DarkGrayDate {
     [CmdletBinding()]
