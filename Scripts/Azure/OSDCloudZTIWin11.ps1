@@ -52,8 +52,8 @@ function Write-SectionSuccess {
 }
 #endregion
 
-$ScriptName = 'win11.garytown.com'
-$ScriptVersion = '25.01.22.1'
+$ScriptName = 'osdcloud.coloneldecker.com'
+$ScriptVersion = '25.03.22.1'
 Write-Host -ForegroundColor Green "$ScriptName $ScriptVersion"
 #iex (irm functions.garytown.com) #Add custom functions used in Script Hosting in GitHub
 #iex (irm functions.osdcloud.com) #Add custom fucntions from OSDCloud
@@ -82,7 +82,11 @@ $OSLanguage = 'nl-nl'
 
 #Set OSDCloud Vars
 $Global:MyOSDCloud = [ordered]@{
-    Restart = [bool]$False
+    Restart = [bool]$true
+    RestartComputer = [bool]$true
+    updateDiskDrivers = [bool]$true
+    updateNetworkDrivers = [bool]$true
+    updateSCSIDrivers = [bool]$true
     RecoveryPartition = [bool]$true
     OEMActivation = [bool]$True
     WindowsUpdate = [bool]$false
@@ -124,8 +128,9 @@ if (Test-DISMFromOSDCloudUSB -eq $true){
 if (Test-HPIASupport){
     Write-SectionHeader -Message "Detected HP Device, Enabling HPIA, HP BIOS and HP TPM Updates"
     #$Global:MyOSDCloud.DevMode = [bool]$True
-    $Global:MyOSDCloud.HPTPMUpdate = [bool]$True
-    if ($Product -ne '83B2' -and $Model -notmatch "zbook"){$Global:MyOSDCloud.HPIAALL = [bool]$true} #I've had issues with this device and HPIA
+    $Global:MyOSDCloud.HPTPMUpdate = [bool]$false
+    $Global:MyOSDCloud.HPIAALL = [bool]$false}
+    #if ($Product -ne '83B2' -and $Model -notmatch "zbook"){$Global:MyOSDCloud.HPIAALL = [bool]$true} #I've had issues with this device and HPIA
     #{$Global:MyOSDCloud.HPIAALL = [bool]$true}
     $Global:MyOSDCloud.HPBIOSUpdate = [bool]$false
     #$Global:MyOSDCloud.HPCMSLDriverPackLatest = [bool]$true #In Test 
