@@ -10,7 +10,7 @@ function Show-DomainSelectionForm {
 
     # Create the form
     $form = New-Object System.Windows.Forms.Form
-    $form.Text = "OSDClud FNV OS selectie"
+    $form.Text = "FNV OSDCloud OS selectie"
     $form.Size = New-Object System.Drawing.Size(450, 220)  # Increased width and height
     $form.StartPosition = "CenterScreen"
     $form.BackColor = [System.Drawing.Color]::White
