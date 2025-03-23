@@ -11,14 +11,14 @@ function Show-DomainSelectionForm {
     # Create the form
     $form = New-Object System.Windows.Forms.Form
     $form.Text = "OSDClud FNV OS selectie"
-    $form.Size = New-Object System.Drawing.Size(650, 220)  # Increased width and height
+    $form.Size = New-Object System.Drawing.Size(450, 220)  # Increased width and height
     $form.StartPosition = "CenterScreen"
     $form.BackColor = [System.Drawing.Color]::White
 
     # Add a label
     $label = New-Object System.Windows.Forms.Label
     $label.Text = "Selecteer het OS:"
-    $label.Size = New-Object System.Drawing.Size(600, 40)  # Adjusted width, allows wrapping
+    $label.Size = New-Object System.Drawing.Size(400, 40)  # Adjusted width, allows wrapping
     $label.Font = New-Object System.Drawing.Font("Segoe UI", 10)
     $label.Location = New-Object System.Drawing.Point(20, 20)
     $label.AutoSize = $false  # Prevents text from getting cut off
@@ -27,7 +27,7 @@ function Show-DomainSelectionForm {
     # Add the dropdown box
     $dropdown = New-Object System.Windows.Forms.ComboBox
     $dropdown.Location = New-Object System.Drawing.Point(20, 70)
-    $dropdown.Size = New-Object System.Drawing.Size(600, 20)  # Adjusted width
+    $dropdown.Size = New-Object System.Drawing.Size(400, 20)  # Adjusted width
     $dropdown.DropDownStyle = "DropDownList"
     $dropdown.Items.AddRange($Options)
     $form.Controls.Add($dropdown)
