@@ -131,7 +131,7 @@ if ($Selection -eq "J") {
     If ($selectedOSD -eq "Windows 11 24H2"){
         Write-Host  "Starten OSDCloud ($SelectedOSD)"
         Try{
-            iex (irm osdcloud.coloneldecker.com)
+            iex (irm windows11.coloneldecker.com)
         } Catch {
             Write-Host "Er ging iets fout met OSDCloud" -ForegroundColor Red
             Sleep 5
@@ -153,3 +153,5 @@ if ($Selection -eq "J") {
     Write-Host "Script gestopt. Systeem wordt niet opnieuw geinstalleerd" -ForegroundColor Yellow
     exit
 }
+
+
