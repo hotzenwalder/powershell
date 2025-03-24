@@ -154,4 +154,9 @@ if ($Selection -eq "J") {
     exit
 }
 
+#Restart from WinPE
+Write-Host  -ForegroundColor Cyan "Herstarten in 20 seconden..."
+Start-Sleep -Seconds 20
+wpeutil reboot
+
 
