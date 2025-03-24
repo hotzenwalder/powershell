@@ -55,8 +55,8 @@ function Write-SectionSuccess {
 
 #endregion
 
-$ScriptName = 'osdcloud.coloneldecker.com'
-$ScriptVersion = '25.03.22.1'
+$ScriptName = 'windows11.coloneldecker.com'
+$ScriptVersion = '25.03.24.1'
 Write-Host -ForegroundColor Green "$ScriptName $ScriptVersion"
 #iex (irm functions.garytown.com) #Add custom functions used in Script Hosting in GitHub
 #iex (irm functions.osdcloud.com) #Add custom fucntions from OSDCloud
@@ -111,7 +111,7 @@ $Global:MyOSDCloud = [ordered]@{
 
 $Global:MyOSDCloud.DriverPackName = "None"
 
-<#If Drivers are expanded on the USB Drive, disable installing a Driver Pack
+#If Drivers are expanded on the USB Drive, disable installing a Driver Pack
 if (Test-DISMFromOSDCloudUSB -eq $true){
     Write-Host "Found Driver Pack Extracted on Cloud USB Flash Drive, disabling Driver Download via OSDCloud" -ForegroundColor Green
     if ($Global:MyOSDCloud.SyncMSUpCatDriverUSB -eq $true){
@@ -123,8 +123,6 @@ if (Test-DISMFromOSDCloudUSB -eq $true){
         $Global:MyOSDCloud.DriverPackName = "None"
     }
 }
-#>
-
 #Enable HPIA | Update HP BIOS | Update HP TPM
  
 if (Test-HPIASupport){
